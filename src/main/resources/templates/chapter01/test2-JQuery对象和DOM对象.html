@@ -9,15 +9,6 @@
 <script src="../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".level1 > a").click(function () {
-            $(this).addClass("current") // 给当前元素添加"current"样式
-                    .next().show()              // 下一个元素显示
-                    .parents().siblings().children("a").removeClass("current") // 父级的同类元素的子元素<a>移除"current"样式
-                    .next().hide();             // 他们的下一个元素隐藏
-
-            return false;
-        });
-
         // DOM对象的方法
         var domObj = document.getElementById("aShirt");
         var objHtml = domObj.innerHTML;
@@ -26,6 +17,16 @@
         // JQuery对象的方法
         var jqueryObjHtml = $("#aShirt").html(); // 衬衫
         console.log(jqueryObjHtml);// 衬衫
+
+        // JQuery对象与DOM对象的转换
+        // 1.JQuery对象转DOM对象
+        // $jqueryObj是JQuery对象，domObj2与domObj3是DOM对象
+        var $jqueryObj = $(".level1");// 会有三个
+        var domObj2 = $jqueryObj[0];
+        var domObj3 = $jqueryObj.get(0);
+        console.log($jqueryObj);
+        console.log(domObj2);
+        console.log(domObj3);
     });
 
 </script>
