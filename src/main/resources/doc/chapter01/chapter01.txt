@@ -1,0 +1,17 @@
+1.windows.onload与$(document).ready()的区别
+  windows.onload
+      <1> 必须等网页中所有的内容加载完毕后（包括图片）才能执行
+      <2> 只能写一个，不能同时写多个
+      <3> 无简写
+  $(document).ready()
+      <1> 网页中所有的DOM结构绘制完毕后就执行，可能DOM元素关联的东西并没有加载完
+      <2> 能同时写多个
+      <3> 可以简写成下面的格式
+          $(function(){
+
+          });
+
+2.代码注释的重要性
+  // 在一个id为table的表格的tbody中，如果每一行的一列中的checkbox没有被禁用，则把这行的背景设为红色
+  $("#table>tbody>tr:has(td:has(:checkbox:enabled))").css("background","red");
+  可读性很差
