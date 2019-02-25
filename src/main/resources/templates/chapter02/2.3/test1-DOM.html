@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../static/css/default.css" type="text/css" />
+    <style>
+        p {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+<script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    // 操作：
+    // 1.获取所有<p>元素
+    // 2.对<p>进行循环
+    // 3.给每个<p>元素添加行为事件
+    $(document).ready(function () {
+        var items = document.getElementsByTagName("p");// 获取网页中所有的p元素
+        for (var i = 0; i < items.length; i++){        // 循环
+            items[i].onclick = function () {           // 位每一个p元素添加点击事件
+                // do something
+                // 注意这里需要将items[i]的值用一个变量存储起来，否则点击时就会是undefined的，会报错
+                var item = items[0];
+                alert(item.innerHTML);
+            }
+        }
+    });
+</script>
+    <p>测试1</p>
+    <p>测试2</p>
+</body>
+</html>

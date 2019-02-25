@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../static/css/default.css" type="text/css" />
+</head>
+<body>
+<script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+    // 1.会报错哦，因为网页中没有id = "tt"的元素
+    document.getElementById("tt").style.color = "red";
+    // 2.添加if判断
+    if (document.getElementById("tt")) {
+        // 代码冗余
+        document.getElementById("tt").style.color = "red";
+    }
+    // 3.JQuery方式，简洁且防止报错
+    // 不用进行空的判断
+    $("#tt").css("color","red");
+
+    // 4.$("#tt")获取的永远都是对象，即使网页上没有此元素。
+    //   因此判断某个元素在网页上是否存在时，不能使用下面的代码
+    if ($("#tt")){
+        // do something
+    }
+    // 5.可以通过长度、或者转为DOM对象进行判断
+    if ($("#tt").length > 0 ){
+        // do something
+    }
+    // or
+    if ($("#tt")[0]){
+        // do something
+    }
+
+</script>
+
+<div class="box">
+    <ul class="menu">
+        <li class="level1">
+            <a href="#none" id="aShirt">衬衫</a>
+            <ul class="level2">
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">长袖衬衫</a></li>
+                <li><a href="#none">短袖T恤</a></li>
+                <li><a href="#none">长袖T恤</a></li>
+            </ul>
+        </li>
+        <li class="level1">
+            <a href="#none">卫衣</a>
+            <ul class="level2">
+                <li><a href="#none">开襟卫衣</a></li>
+                <li><a href="#none">套头卫衣</a></li>
+                <li><a href="#none">运动卫衣</a></li>
+                <li><a href="#none">童装卫衣</a></li>
+            </ul>
+        </li>
+        <li class="level1">
+            <a href="#none">裤子</a>
+            <ul class="level2">
+                <li><a href="#none">短裤</a></li>
+                <li><a href="#none">休闲裤</a></li>
+                <li><a href="#none">牛仔裤</a></li>
+                <li><a href="#none">免烫卡其裤</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

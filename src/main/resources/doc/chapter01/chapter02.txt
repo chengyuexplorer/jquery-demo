@@ -1,0 +1,32 @@
+第二章 JQuery选择器
+2.1 选择器
+1.CSS选择器
+  标签选择器
+  ID选择器
+  类选择器
+  群组选择器
+  后代选择器
+  通配选择器
+
+2.JQuery选择器
+
+2.2 JQuery选择器的优势
+  1.简洁的写法
+    $("#ID") = document.getElementById("ID");               //
+    $("tagNAME") = document.getElementByTagName("tagName");
+
+  2.支持CSS1到CSS3选择器
+
+  3.完善的处理机制
+
+
+2.3 JQuery选择器
+1.基本选择器
+  分类：picture/JQuery基本选择器.PNG
+2.层次选择器
+  分类：picture/JQuery层次选择器.PNG
+  1.$("body div")和$("body > div")的区别：
+    $("body div")：获取的是<body>标签内所有的<div>元素
+    $("body > div")：获取的只是<body>标签内子一级所有的<div>元素；子二级的不包含
+3.过滤选择器
+  1.基本过滤选择：pictures/过滤选择器/JQuery基本过滤选择器.PNG

@@ -1,0 +1,16 @@
+1.<label>标签的for属性：
+    作用：如果您在 label 元素内点击文本，就会触发此控件。
+        就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。
+        即点击改标签的内容，同样会触发复选框的选中操作。
+    有两种使用方法：
+    方法1　　使用for属性
+        <label for="userName">用户名：</label><input type="text" id="userName"/>
+    方法2
+        <label>用户名：<input type="text"/></label>
+    在使用单选按钮radio或者多选按钮checkbox的时候，有时需要在选中文字的时候就要选中单选或者多选按钮，这同样可以使用类似上面的方法。
+    方法1
+        <label><input type="radio" />用户名</label>
+        <label><input type="checkbox">学校</label>
+    方法2　　使用for属性
+        <label for="userName">用户名</label> <input type="radio" id="userName" />
+        <label for="userName">用户名</label> <input type="checkbox" id="userName" />

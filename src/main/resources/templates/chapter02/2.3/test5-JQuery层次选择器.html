@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../static/css/style.css" type="text/css" />
+</head>
+<body>
+<script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        // 1.改变<body>内所有<div>的背景色
+        $("body div").css("background","red");
+
+        // 2.改变<body>内子一级的所有<div>的背景色；子二级以下的不算
+        $("body > div").css("background","red");
+
+        // 3.改变class为one的下一个<div>同辈元素的背景色
+        $(".one + div").css("background","red");
+        // 用的较少：等效于
+        $(".one").next("div").css("background","red");
+
+        // 4.改变id = two的元素后面的所有同辈<div>元素的背景色
+        $("#two ~ div").css("background","red");
+        // 用的较少：等效于
+        $("#two").nextAll("div").css("background","red");
+        // 注意：siblings()方法：可以选择同辈的所有元素，与前后位置无关
+        $("#two").siblings("div").css("background","red");
+
+    });
+</script>
+
+    <!-- 测试的元素 -->
+    <div class="one" id="one" >
+        id为one,class为one的div
+        <div class="mini">class为mini</div>
+    </div>
+    <div class="one"  id="two" title="test" >
+        id为two,class为one,title为test的div.
+        <div class="mini"  title="other">class为mini,title为other</div>
+        <div class="mini"  title="test">class为mini,title为test</div>
+    </div>
+    <div class="one">
+        <div class="mini">class为mini</div>
+        <div class="mini">class为mini</div>
+        <div class="mini">class为mini</div>
+        <div class="mini"></div>
+    </div>
+    <div class="one">
+        <div class="mini">class为mini</div>
+        <div class="mini">class为mini</div>
+        <div class="mini">class为mini</div>
+        <div class="mini"  title="tesst">class为mini,title为tesst</div>
+    </div>
+    <div style="display:none;"  class="none">
+        style的display为"none"的div
+    </div>
+    <div class="hide">class为"hide"的div</div>
+    <div>
+        包含input的type为"hidden"的div<input type="hidden" size="8"/>
+    </div>
+    <span id="mover">正在执行动画的span元素.</span>
+</body>
+</html>

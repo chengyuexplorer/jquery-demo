@@ -1,3 +1,5 @@
+第一章 认识JQuery
+
 1.windows.onload与$(document).ready()的区别
   windows.onload
       <1> 必须等网页中所有的内容加载完毕后（包括图片）才能执行
@@ -31,13 +33,23 @@
 
  3.1 二者的相互转换
      约定风格：var $variable = JQuery对象;
-              var variable = DOM对象;
+               var variable = DOM对象;
 
      <1> JQuery对象转成DOM对象
          JQuery对象是一个类似数组的对象，可以通过[index]或者get(index)来转换成DOM对象
          {
-
+             var $jqueryObj = $(".level1");// 会有三个
+             var domObj2 = $jqueryObj[0];
+             var domObj3 = $jqueryObj.get(0);
          }
+     <2> DOM对象转成JQuery对象
+         只需要将一个DOM对象用$()包装起来就是JQuery对象了
+         var cr = document.getElementById("cr");// DOM对象
+         var $cr = $(cr);                       // JQuery对象
+
+ 重点说明：
+    1.JQuery对象不能使用DOM对象相关的方法，DOM对象也不能使用JQuery对象相关的方法
+    2.$()就是一个JQuery对象的制造工厂。
 
 
 

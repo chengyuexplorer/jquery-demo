@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/default.css" type="text/css" />
+</head>
+<body>
+<script src="../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $cr = $("#cr");// JQuery对象
+        var cr = $cr[0];  // DOM对象
+        $("#cr").click(function () {
+            if (cr.checked) {
+                alert("你可以继续操作！");
+            }
+        });
+    });
+
+</script>
+
+<!--
+   <label>标签的for属性：
+   作用：如果您在 label 元素内点击文本，就会触发此控件。
+         就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。
+         即点击改标签的内容，同样会触发复选框的选中操作。
+-->
+<input type="checkbox" id="cr"/> <label for="cr">我已经阅读了上面制度.</label>
+</body>
+</html>

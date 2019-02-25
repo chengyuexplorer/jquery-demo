@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../static/css/default.css" type="text/css" />
+    <style>
+        p {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+<script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        // DOM方式
+        var item = document.getElementById("btn");
+        btn.onclick = function () {
+            var arrays = new Array();// 创建一个数组对象
+            var items = document.getElementsByName("check");// 获取name = check的一组checkbox元素
+
+            for (var i = 0; i < items.length; i++){
+                if (items[i].checked){
+                    arrays.push(items[i].value);
+                }
+            }
+            alert(arrays.length);// 输出选中的个数
+        }
+
+    });
+</script>
+    <input type="checkbox" value="1" name="check" checked="checked">
+    <input type="checkbox" value="2" name="check">
+    <input type="checkbox" value="3" name="check" checked="checked">
+    <input type="button" value="你选中的个数" id="btn">
+</body>
+</html>

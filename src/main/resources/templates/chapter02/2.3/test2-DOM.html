@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../static/css/default.css" type="text/css" />
+    <style>
+        p {
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+<script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        // DOM方式
+        var item = document.getElementById("tb");
+        var tbody = item.getElementsByTagName("tbody")[0];
+        var trs = tbody.getElementsByTagName("tr");
+
+
+        for (var i = 0; i < trs.length; i++){        // 循环
+           if (i%2){
+               trs[i].style.backgroundColor = "red";
+           }
+        }
+
+    });
+</script>
+    <table id="tb">
+        <tbody>
+            <title>表格测试</title>
+            <tr>
+                <td>第1行第1列</td>
+                <td>第1行第2列</td>
+            </tr>
+            <tr>
+                <td>第2行第1列</td>
+                <td>第2行第2列</td>
+            </tr>
+            <tr>
+                <td>第3行第1列</td>
+                <td>第3行第2列</td>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
