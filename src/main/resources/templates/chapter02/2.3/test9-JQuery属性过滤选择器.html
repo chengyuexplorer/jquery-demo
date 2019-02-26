@@ -10,19 +10,21 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        // // 第一个div元素
-        // $("div:first").css("background","red");
-        // // 最后一个div元素
-        // $("div:last").css("background","red");
-        // // class不为one的div元素
-        // $("div:not(.one)").css("background","red");
-        // 索引值为偶数
-        $("div:even").css("background","red");
-
-        // 索引值：获取方法，JQuery的index()方法获取当前元素的索引值
-        console.log($("#one").index());
-        console.log($("#miniOne").index());
-        console.log($("#miniTwo").index());
+        // 改变含有属性title的div的背景色
+        // $("div[title]").css("background","red");
+        // 改变属性title=test的div的背景色:下面两种方式都可以
+        $("div[title=test]").css("background","red");
+        $("div[title='test']").css("background","red");
+        // 改变属性title!=test的div的背景色
+        $("div[title!=test]").css("background","red");
+        // 改变属性title以te开头的div的背景色
+        $("div[title^=te]").css("background","red");
+        // 改变属性title以est结尾的div的背景色
+        $("div[title$=est]").css("background","red");
+        // 改变属性title属性值含有es的div的背景色
+        $("div[title*=es]").css("background","red");
+        // 改变含有属性id且属性title属性值含有es的div的背景色
+        $("div[id][title*=es]").css("background","red");
 
 
     });

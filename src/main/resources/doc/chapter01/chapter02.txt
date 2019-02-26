@@ -29,4 +29,16 @@
     $("body div")：获取的是<body>标签内所有的<div>元素
     $("body > div")：获取的只是<body>标签内子一级所有的<div>元素；子二级的不包含
 3.过滤选择器
-  1.基本过滤选择：pictures/过滤选择器/JQuery基本过滤选择器.PNG
+  1.基本过滤选择器：pictures/过滤选择器/JQuery基本过滤选择器.PNG
+  2.内容过滤选择器：pictures/过滤选择器/JQuery内容过滤选择器.PNG
+
+
+
+
+
+
+
+
+
+
+

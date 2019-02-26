@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../../static/css/style.css" type="text/css" />
+</head>
+<body>
+<script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        // 改变含有属性title以en开始的div的背景色
+        $('div[title^="en"]').css("background","red");
+        // 改变含有属性title包含en开始的div的背景色
+        $('div[title*="en"]').css("background","red");
+        // 1.title=en 2.title以en开头(该值后跟一个"-")
+        $('div[title*="en"]').css("background","red");
+        // 1.title以空格分隔，且其中含有en
+        $('div[title~="en"]').css("background","red");
+
+
+
+    });
+</script>
+
+  <div title="en">title为en的div元素</div>
+  <div title="en-UK">title为en-UK的div元素</div>
+  <div title="english">title为english的div元素</div>
+  <div title="en uk">title为en uk的div元素</div>
+  <div title="uken">title为uken的div元素</div>
+</body>
+</html>
