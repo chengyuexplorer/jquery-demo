@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <script src="../../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+        $("button").toggle(function(){
+            $("body").css("background-color", "green");
+        }, function(){
+            $("body").css("background-color", "red");
+        }, function(){
+            $("body").css("background-color", "yellow");
+        });
+    });
+
+    $.fn.toggle = function( fn ) {
+        // Save reference to arguments for access in closure
+        var args = arguments,
+            guid = fn.guid || jQuery.guid++,
+            i = 0,
+            toggler = function( event ) {
+                // Figure out which function to execute
+                var lastToggle = ( jQuery._data( this, "lastToggle" + fn.guid ) || 0 ) % i;
+                jQuery._data( this, "lastToggle" + fn.guid, lastToggle + 1 );
+                // Make sure that clicks stop
+                event.preventDefault();
+                // and execute the function
+                return args[ lastToggle ].apply( this, arguments ) || false;
+            };
+        // link all the functions, so any of them can unbind this click handler
+        toggler.guid = guid;
+        while ( i < args.length ) {
+            args[ i++ ].guid = guid;
+        }
+        return this.click( toggler );
+    }
+</script>
+
+<button>test click me</button>
+</body>
+</html>

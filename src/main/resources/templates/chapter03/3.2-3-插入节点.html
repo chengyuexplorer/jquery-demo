@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+    <title>dom</title>
+</head>
+<body>
+
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+    <ul>
+        <li title='苹果'>苹果</li>
+        <li title='橘子'>橘子</li>
+        <li title='菠萝'>菠萝</li>
+    </ul>
+
+<script>
+    <!--创建节点-->
+    var $li_1 = $("<li title='香蕉'>香蕉</li>)");
+    var $li_2 = $("<li title='雪梨'>雪梨</li>)");
+    var $li_3 = $("<li title='其它'>其它</li>)");
+    var $parent = $("ul");
+    //添加节点
+    $parent.append($li_1);// 添加到最后面
+    $parent.prepend($li_2);// 添加到最前面
+    // 将$li_3节点添加到第二个li之后
+    $("ul li:eq(1)").after($li_3);// 在匹配的元素之后添加
+</script>
+
+</body>
+</html>

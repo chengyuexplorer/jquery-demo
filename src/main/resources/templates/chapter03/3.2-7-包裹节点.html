@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+    <title>dom</title>
+</head>
+<body>
+
+<strong title="选择你最喜欢的水果." >你最喜欢的水果是?</strong>
+<p title="选择你最喜欢的水果." >你最喜欢的水果是?</p>
+<strong title="选择你最喜欢的水果." >你最喜欢的水果是?</strong>
+    <ul id="ul-first">
+        <li title='苹果'>苹果</li>
+        <li title='橘子'>橘子</li>
+        <li title='菠萝'>菠萝</li>
+    </ul>
+
+<script>
+    <!--包裹节点-->
+    // $("strong").wrap("<b></b>");// 逐个包裹（外层）
+    $("strong").wrapAll("<b></b>");// 所有的<strong>用一个<b>包裹
+
+    // 如果两个<strong>之间有其他的标签：会将两个<strong>包裹在一起，将其他标签放在包裹的整体之后
+
+    $("strong").wrapInner("<a></a>");// 包裹子内容
+
+
+
+
+
+</script>
+
+</body>
+</html>

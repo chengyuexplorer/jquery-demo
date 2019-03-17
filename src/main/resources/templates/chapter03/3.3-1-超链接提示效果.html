@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../../static/scripts/jquery-3.3.1/jquery.min.js"></script>
+    <title>dom</title>
+</head>
+<body>
+<p><a href="#" class="tooltip" title="这是我的超链接提示1.">提示1.</a></p>
+<p><a href="#" class="tooltip" title="这是我的超链接提示2.">提示2.</a></p>
+<p><a href="#" title="这是自带提示1.">自带提示1.</a></p>
+<p><a href="#" title="这是自带提示2.">自带提示2.</a></p>
+
+
+<script>
+    <!---->
+    $(function () {
+        $("a.tooltip").mouseover(function (e) {
+            // 显示主题
+            // 创建<div>元素
+            var  tooltip = "<div id='tooltip'>" + $(this).attr('title') + "</div>";
+            $("body").append(tooltip);
+            // 设置tooltip的位置
+            $("#tooltip").css({"top":e.pageY,"left":e.pageX}).show("fast");
+
+        }).mouseout(function () {
+            // 隐藏主题
+            $("#tooltip").remove();
+        });
+    });
+
+
+
+</script>
+
+</body>
+</html>
